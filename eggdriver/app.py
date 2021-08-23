@@ -1,5 +1,5 @@
 # Imports
-from eggdriver.resources.console import get, clearConsole
+from eggdriver.resources.console import get, clearConsole, pg
 from eggdriver.resources.constants import *
 from eggdriver.resources.modules import installFromRequests, upgrade, Repo
 from eggdriver.resources.help import help
@@ -43,21 +43,16 @@ def eggConsole(condition: bool = True):
         elif i == "$register":
             register()
         elif i == "$install":
-            print(white + "Package:")
-            name = get("egg")
+            name = pg("Package:")
             installFromRequests([name], False)
         elif i == "$upgrade":
-            print(white + "Package:")
-            name = get("egg")
+            name =  pg("Package:")
             upgrade(name)
         elif i == "$pull":
-            print(white + "Repo:")
-            name = get("egg")
-            repo = Repo(name)
-            print(white + "Package:")
-            package = get("egg")
-            last = repo.pull(package)
-            # *comming soon*
+            org =  pg("User or Organization:")
+            name = pg("Repository:")
+            repo = Repo(org, name)
+            repo.pull()
         elif i == "$help":
             help()
         elif i == "$clear":

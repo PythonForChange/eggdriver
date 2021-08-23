@@ -28,42 +28,42 @@ Always  use $end command in every console you run
 This is the reason why condition only allows <<bool>> as data type
 """
 def eggConsole(condition: bool = True):
-    print(white+"Egg Console is now running")
+    print(white + "Egg Console is now running")
     logged=0
     while condition:
-        i=get("egg")
-        if i=="$nqs":
+        i = get("egg")
+        if i == "$nqs":
             from eggdriver.nqs import developerConsole
             developerConsole()
-        elif i=="$new":
+        elif i == "$new":
             from eggdriver.news import journalistConsole
             journalistConsole()
-        elif i=="$login":
+        elif i == "$login":
             login()
-        elif i=="$register":
+        elif i == "$register":
             register()
-        elif i=="$install":
-            print(white+"Package:")
-            name=get("egg")
+        elif i == "$install":
+            print(white + "Package:")
+            name = get("egg")
             installFromRequests([name], False)
-        elif i=="$upgrade":
-            print(white+"Package:")
-            name=get("egg")
+        elif i == "$upgrade":
+            print(white + "Package:")
+            name = get("egg")
             upgrade(name)
-        elif i=="$pull":
-            print(white+"Repo:")
-            name=get("egg")
-            repo=Repo(name)
-            print(white+"Package:")
-            package=get("egg")
-            last=repo.pull(package)
+        elif i == "$pull":
+            print(white + "Repo:")
+            name = get("egg")
+            repo = Repo(name)
+            print(white + "Package:")
+            package = get("egg")
+            last = repo.pull(package)
             # *comming soon*
-        elif i=="$help":
+        elif i == "$help":
             help()
-        elif i=="$clear":
+        elif i == "$clear":
             clearConsole()
-        elif i=="$end":
-            print(white+"Egg Console stopped running")
+        elif i == "$end":
+            print(white + "Egg Console stopped running")
             return "done"
         else:
     	    pass

@@ -1,7 +1,7 @@
 # Imports
 from eggdriver.resources.console import get, clearConsole
 from eggdriver.resources.constants import *
-from eggdriver.resources.modules import install, upgrade, Repo
+from eggdriver.resources.modules import installFromRequests, upgrade, Repo
 from eggdriver.resources.help import help
 from eggdriver.resources.auth import login, register
 
@@ -33,10 +33,10 @@ def eggConsole(condition: bool = True):
     while condition:
         i=get("egg")
         if i=="$nqs":
-            from nqs.developer.app import developerConsole
+            from eggdriver.nqs import developerConsole
             developerConsole()
         elif i=="$new":
-            from news.app import journalistConsole
+            from eggdriver.news import journalistConsole
             journalistConsole()
         elif i=="$login":
             login()
@@ -45,7 +45,7 @@ def eggConsole(condition: bool = True):
         elif i=="$install":
             print(white+"Package:")
             name=get("egg")
-            install(name)
+            installFromRequests([name], False)
         elif i=="$upgrade":
             print(white+"Package:")
             name=get("egg")

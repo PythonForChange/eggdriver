@@ -1,4 +1,4 @@
-from eggdriver.resources.structures import Iterator
+from eggdriver.resources.structures.iterators import Iterator
 
 class List():
     def __init__(self, list = []):

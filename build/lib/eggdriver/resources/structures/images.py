@@ -1,4 +1,5 @@
-from eggdriver.resources.structures import List, Matrix
+from eggdriver.resources.structures.lists import List
+from eggdriver.resources.structures.matrices import Matrix
 from eggdriver.resources.modules import installFromRequests
 from eggdriver.resources.console import sleep
 from eggdriver.resources.constants import limit, square, whiteSquare, blackSquare

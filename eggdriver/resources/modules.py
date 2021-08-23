@@ -13,7 +13,7 @@ def isntInstalled(package):
     return False
 
 def install_option_1(name: str):
-    #Implement pip as a subprocess
+    """Implement pip as a subprocess"""
     if name == "$upgrade":
         subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', 'pip'])
     else:
@@ -21,7 +21,7 @@ def install_option_1(name: str):
     return "done"
 
 def install_option_2(name: str):
-    #Implement pip using pip package
+    """Implement pip using pip package"""
     pip.main(['install', name])
     return "done"
 

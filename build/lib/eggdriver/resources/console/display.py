@@ -1,4 +1,4 @@
-import time, os
+import time, os, sys, subprocess
 from eggdriver.resources.constants import *
 
 def sleep(i: int =100):
@@ -15,3 +15,10 @@ def display(T, delta: int = 400, condition: bool = True):
 		print(T)
 		sleep(delta)
 		clearConsole()
+
+def sysCommand(command: str):
+	commands = command.split()
+	temp = commands.reverse()
+	temp.append(sys.executable)
+	commands = temp.reverse()
+	subprocess.check_call(commands)

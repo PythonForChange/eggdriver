@@ -1,4 +1,4 @@
-from eggdriver.resources.structures import List
+from eggdriver.resources.structures.lists import List
 
 class Matrix(List):
     def __init__(self, listOfLists = []):

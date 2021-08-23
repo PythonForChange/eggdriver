@@ -1,0 +1,7 @@
+numpy
+tensorflow
+keras
+Colr
+
+[github_com]
+github_com

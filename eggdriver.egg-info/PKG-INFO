@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: eggdriver
+Version: 0.0.1a1
+Summary: A Python For Change driver
+Home-page: https://github.com/PythonForChange/eggdriver
+Author: Emmanuel Norambuena
+Author-email: eanorambuena@uc.cl
+License: MIT
+Project-URL: Bug Reports, https://github.com/PythonForChange/eggdriver/issues
+Project-URL: Source, https://github.com/PythonForChange/eggdriver
+Keywords: kit,quantum,development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.6, <4
+Description-Content-Type: text/markdown
+Provides-Extra: github_com
+License-File: LICENSE
+
+# eggdriver
+#### 08/06/2021 Santiago, Chile (MM/DD/YYYY)
+##### Tags: [template](https://github.com/topics/template)
+
+

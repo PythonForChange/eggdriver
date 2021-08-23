@@ -1,6 +1,4 @@
-from eggdriver.library.repos import *
-
-author="eanorambuena"
+_author="eanorambuena"
 _author_email="eanorambuena@uc.cl"
 
 eggConsoleCommands=[
@@ -21,8 +19,8 @@ developerConsoleCommands=[
   "compile",
   "save",
   "run",
-  "end",
-  "delay"
+  "delay",
+  "end"
 ]
 
 nqsCommands=[
@@ -38,5 +36,5 @@ nqsCommands=[
 
 journalistConsoleCommands=[
   "save",
-  "end",
+  "end"
 ]

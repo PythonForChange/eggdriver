@@ -28,6 +28,7 @@ Always  use $end command in every console you run
 This is the reason why condition only allows <<bool>> as data type
 """
 def eggConsole(condition: bool = True):
+    """Display the Egg Console"""
     print(white + "Egg Console is now running")
     logged=0
     while condition:

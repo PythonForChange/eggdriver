@@ -25,19 +25,27 @@ def install_option_2(name: str):
     pip.main(['install', name])
     return "done"
 
-def installFromRequests(requestOrPackages = "requests",fromRequests = True):
+def installFromRequests(requestOrPackages = "requests", fromRequests = True):
     if fromRequests:
         requestOrPackages = withoutFormat.getLines(requestOrPackages)
     bar = ProgressBar()
     l = len(requestOrPackages)
     c = 0
     for package in requestOrPackages:
-        bar.display(int(c / l * 100), 32, 24, True)
         if '\n' in package:
             package = package.rstrip('\n')
         if isntInstalled(package):
             install_option_1(package)
         c += 1
+        bar.display(int(c / l * 100), 32, 24, True)
+
+def installFromGithub(userOrOrganization: str, packages: list):
+    for package in packages:
+        url = f"git+https://github.com/{userOrOrganization}/{package}.git#egg={package}"
+        installFromRequests([url], False)
+        print(white + package +" succesfully installed")
+        print(white + f"Try \'import {package}\'")
+
 def install(name: str):
     try:
         installFromRequests(name,0)
@@ -50,7 +58,7 @@ def install(name: str):
         except:
             print(white + "Install failed")
             return "error"
-    print(white+name+" succesfully installed")
+    print(white + name + " succesfully installed")
     return "done"
 
 def upgrade(name: str):
@@ -61,13 +69,11 @@ def upgrade(name: str):
     return "done"
 
 class Repo():
-    def __init__(self, name: str):
-        self.name = name
-    def pull(self, package: str, functions: str = ""):
-        funcs = functions.split(" ")
+    def __init__(self, userOrOrganization: str, package: str):
+        self.root = userOrOrganization
+        self.name = package
+    def pull(self):
         try:
-            package = "github_com.PythonForChange." + self.name + "." + package
-            _temp = il.__import__(package, globals(), locals(), funcs, 0)
-            return _temp
+            installFromGithub(self.root, [self.name])
         except:
             print(white + "Pull failed")

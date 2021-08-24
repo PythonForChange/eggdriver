@@ -1,11 +1,11 @@
 import pip, sys, subprocess
-import importlib as il
 import importlib.util
 from eggdriver.resources.constants import white
 from eggdriver.resources.extensions import withoutFormat
 from eggdriver.resources.console import ProgressBar
 
 def isntInstalled(package):
+    """Returns True if a PyPI is not installed"""
     spec = importlib.util.find_spec(package)
     loweredSpec = importlib.util.find_spec(package.lower())
     if (spec is None) and (loweredSpec is None): 
@@ -26,6 +26,7 @@ def install_option_2(name: str):
     return "done"
 
 def installFromRequests(requestOrPackages = "requests", fromRequests = True):
+    """Install PyPI packages from a requests file or a list"""
     if fromRequests:
         requestOrPackages = withoutFormat.getLines(requestOrPackages)
     bar = ProgressBar()
@@ -40,6 +41,7 @@ def installFromRequests(requestOrPackages = "requests", fromRequests = True):
         bar.display(int(c / l * 100), 32, 24, True)
 
 def installFromGithub(userOrOrganization: str, packages: list):
+    """Install a package from github.com"""
     for package in packages:
         url = f"git+https://github.com/{userOrOrganization}/{package}.git#egg={package}"
         installFromRequests([url], False)
@@ -47,6 +49,7 @@ def installFromGithub(userOrOrganization: str, packages: list):
         print(white + f"Try \'import {package}\'")
 
 def install(name: str):
+    """Install a PyPI package"""
     try:
         installFromRequests(name,0)
         #raise Exception("error")
@@ -62,6 +65,7 @@ def install(name: str):
     return "done"
 
 def upgrade(name: str):
+    """Update a PyPI package"""
     try:
         subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', name])
     except:
@@ -69,6 +73,7 @@ def upgrade(name: str):
     return "done"
 
 class Repo():
+    """Github Repo class"""
     def __init__(self, userOrOrganization: str, package: str):
         self.root = userOrOrganization
         self.name = package

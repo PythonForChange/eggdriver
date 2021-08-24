@@ -11,5 +11,5 @@ from eggdriver.resources.strings import *
 from eggdriver.resources.utils import *
 from eggdriver.resources.web import *
 
-_author="eanorambuena"
-_author_email="eanorambuena@uc.cl"
+author="eanorambuena"
+author_email="eanorambuena@uc.cl"

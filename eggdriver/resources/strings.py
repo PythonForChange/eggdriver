@@ -9,13 +9,14 @@ normalize(spanish_phrase)
 >>> El camion es mio
 """
 def normalize(self): # Method retrieved from https://micro.recursospython.com/recursos/como-quitar-tildes-de-una-cadena.html
-        replacements = (
-            ("á", "a"),
-            ("é", "e"),
-            ("í", "i"),
-            ("ó", "o"),
-            ("ú", "u"),
-        )
-        for a, b in replacements:
-            s = self.str.replace(a, b).replace(a.upper(), b.upper())
-        return s
+    """Remove accents from words"""
+    replacements = (
+        ("á", "a"),
+        ("é", "e"),
+        ("í", "i"),
+        ("ó", "o"),
+        ("ú", "u"),
+    )
+    for a, b in replacements:
+        s = self.str.replace(a, b).replace(a.upper(), b.upper())
+    return s

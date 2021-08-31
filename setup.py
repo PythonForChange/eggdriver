@@ -1,4 +1,4 @@
-v = '0.0.1a4'
+v = '0.0.1a5'
 
 """A setuptools based setup module.
 See:

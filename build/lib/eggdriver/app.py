@@ -1,4 +1,3 @@
-# Imports
 from eggdriver.resources.console import get, clearConsole, pg
 from eggdriver.resources.constants import *
 from eggdriver.resources.modules import installFromRequests, upgrade, Repo

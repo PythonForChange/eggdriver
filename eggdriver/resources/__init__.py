@@ -10,6 +10,7 @@ from eggdriver.resources.parser import *
 from eggdriver.resources.strings import *
 from eggdriver.resources.utils import *
 from eggdriver.resources.web import *
+from eggdriver.resources.algorithms import *
 
 author="eanorambuena"
 author_email="eanorambuena@uc.cl"

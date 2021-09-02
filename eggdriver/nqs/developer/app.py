@@ -1,5 +1,5 @@
 from eggdriver.nqs.developer.run import run
-from eggdriver.nqs.core.core import compile
+from eggdriver.nqs.core.kernel import compile
 from eggdriver.resources.extensions import nqa
 from eggdriver.resources.console import display, get, sleep
 from eggdriver.resources.constants import *

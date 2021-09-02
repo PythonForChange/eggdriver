@@ -1,4 +1,4 @@
-from eggdriver.nqs.core.core import compile
+from eggdriver.nqs.core.kernel import compile
 from eggdriver.resources.extensions import py
 
 def write(name: str):

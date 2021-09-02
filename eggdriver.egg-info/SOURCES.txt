@@ -38,6 +38,7 @@ setup.py
 .git/objects/09/4f29b6aa8efd807c26975a033c8249a02f0e82
 .git/objects/0a/635f57a66a9b549a3bcaff59fa61d08a0dd7f3
 .git/objects/0a/9c47621594e153c93473da418cefc771750a1e
+.git/objects/0b/9b5b6a60ef527ccc65b127dfb3278b2319e676
 .git/objects/0f/2cd441ad6cad86b6e7e30c3eebbddcc36ebafb
 .git/objects/11/42436dfce2f5fa14dbf20d97ec400596c625ee
 .git/objects/12/610a9d931df1a7957a9d370039ee43faa038e9
@@ -50,6 +51,7 @@ setup.py
 .git/objects/17/69b9e619ac7e1b40192bfbe79e0206ab6e08ff
 .git/objects/1b/b69e31fd2d02536a6c5a0b93912212024f87a0
 .git/objects/1b/dd6163fda727386c82e6150db190fdfb9cdfb4
+.git/objects/1c/6642e13cba5c87359d0999fb2e36902faa584b
 .git/objects/1d/d39c37a94509905b1987aed11238d244d6276f
 .git/objects/1e/4f9ee0c13ca250aaf9bffb1c86917d984dd95c
 .git/objects/1f/804607a833a5357da8a583756d18e8e1d06a19
@@ -69,6 +71,8 @@ setup.py
 .git/objects/32/5735f110a5cdf7da38bb9eb96e137a4afa413b
 .git/objects/33/17c2b118677465b11a0a402a0d90c8052349f5
 .git/objects/33/adfd4138f5952041ea11471929b89f22b7f8c8
+.git/objects/34/1feb328e3bd05128db4e108b9a3b6013bfd388
+.git/objects/34/4df3f548daad60e8b8df10d1ef6a902ec98beb
 .git/objects/35/4247216528426b6b57238626de9410b81779fe
 .git/objects/35/d593ae6b5d775a944b76ce1b1355e45cdaa4f2
 .git/objects/36/9ec5170252eb79e727ae2e1b9e49f5ba7159ea
@@ -86,13 +90,16 @@ setup.py
 .git/objects/48/2f63f753caffe4723c6cf8ffdd9cf601f6aaf8
 .git/objects/49/71a64aaf5f87615c72aece898bf0e5d06c95b6
 .git/objects/4b/ec9bef3483c053782420f7e8b7bf452612f54a
+.git/objects/4b/fe2ba37430a6990b44dec93f17098b6c27a824
 .git/objects/4c/d3a58c9763533aac3bb7bb6b1c1250c342f62e
 .git/objects/4e/9f0562e5c9f9fce37d26e30bf8d152e299ef49
+.git/objects/50/d94cd01d99d2fec9e662852cb8dd98ea2ae9ad
 .git/objects/54/2b7bdcb2ed31886904c53f3745b6dffcd80310
 .git/objects/55/3dd5ae554fca667cc2ad210b5a4b453a01f1b9
 .git/objects/57/63b962f8e0d2bf69d4c8e8281d297d35f08327
 .git/objects/57/64ae944e730ad1c9640ff973b9ad91f5a7dc02
 .git/objects/58/525bd04d1ed23de2af37274613f2b036251e55
+.git/objects/5a/a60c6312f68f3a75aa46cc7eb73b1b67e064ab
 .git/objects/5b/aa795f0463c55afd3480088859132422e72d8a
 .git/objects/5b/c8ae873d37d62d9fcccc949238f9a7a0420fe4
 .git/objects/5c/44225d29600798cd1367f11ef14dff455a4dc2
@@ -101,6 +108,7 @@ setup.py
 .git/objects/60/cb82bf90273e2092dc636f7e64bbf199be884e
 .git/objects/64/9c7ebcd33aec7adf1c1a059e52fb5e8831b4c2
 .git/objects/65/23e1aefdca51fb90ada4dacacdfee8ea8eec97
+.git/objects/66/7cf2ce4a5840f557cd70ce59be3927be49133f
 .git/objects/66/b5ce0e38971fc713d45d97e2de2f07f8a1957c
 .git/objects/66/fba26812f2734aed7f3dac6789fc71937d2a8f
 .git/objects/67/1ed949f6d593bea184fecc241136bdd1d7fc12
@@ -128,6 +136,7 @@ setup.py
 .git/objects/80/2480ce1080c96f442cbc1356e933446aef48fe
 .git/objects/81/f0df1b7fbf978ab70ed2417b47e523a99de21d
 .git/objects/83/e50922d162b46ecb03a1ea8bca5b272d7c69ad
+.git/objects/86/0e2292eccee46af0bf4d7eb8bf86cd0296f9b6
 .git/objects/86/24c4775267fa976c85874e14951892a5012f82
 .git/objects/86/43832eb00d9eb968bae0f217ed66b7302eeaec
 .git/objects/86/64885f65bb42aee2e267c984c259beec99b901
@@ -135,6 +144,7 @@ setup.py
 .git/objects/88/64dba544e6b3340f325d607a18a55847c50b03
 .git/objects/88/a01c081542ab63e96f11a1621973f0609a67e5
 .git/objects/8b/137891791fe96927ad78e64b0aad7bded08bdc
+.git/objects/8c/10416a822386cac57e7dca26d2f9455f4a030f
 .git/objects/8c/6ebd69ebb9bd5fefe2cdcb862f6873d45f22c1
 .git/objects/8c/cdea85160500b1ae74500a988cb7790991611c
 .git/objects/8c/dd5a2f3e065ed6ed694df4093a650c58bdcc70
@@ -157,10 +167,13 @@ setup.py
 .git/objects/a0/253f98b7f5b79b6c8499d980a5969a84dabd4f
 .git/objects/a5/fe3ee20e4e7e19b40f2cf3204e45377a912fd4
 .git/objects/a6/fe7eefbd741ccc1346a0f3f823c511adf6d9de
+.git/objects/a8/b84b0d6910c2892816479fc937a7b73c9df9e4
 .git/objects/ab/e196f743dc8da4002ac73ebda12ffb080a8d77
+.git/objects/ad/4f92c73dca3db624a01180d75e27caf04cfd7c
 .git/objects/ad/9dc0c9a67d151fdf5c393a396f5ddfd293959f
 .git/objects/ae/d079d1c80e4bca3249118f08e400814b67f4f9
 .git/objects/af/76341e6eea7f2b300150b85dd55047ce6e2a21
+.git/objects/af/c7b23e2cb7c5e598cea06b9c3dacc1085b018d
 .git/objects/b1/d5bca411ae85380174d0df3518f545c4e1fc4e
 .git/objects/b3/31e4134beb780e674090a8aec286827833eca9
 .git/objects/b3/93603af2d8d0bd3c826a73ab2e1b7c8d9adf8c
@@ -176,8 +189,10 @@ setup.py
 .git/objects/bc/a8972af575403ca57aeb564c8056833e72fdf3
 .git/objects/bd/f1b88318042c7e7ed787653f6df43fbc02c2d6
 .git/objects/bf/31096c6b88d2965c3a850b5ac740f65ede19cf
+.git/objects/c1/aebd53bf0a908c4794e2565316b9a006a8cdb9
 .git/objects/c2/72eb071b6d7781437c4b1d325f55bfc1ba7512
 .git/objects/c2/b95e0be0c795b31ccf22ed2e7c5814c5059e42
+.git/objects/c3/40f46e1281b17e210e75e517755a49756191bf
 .git/objects/c3/f54b1331eefddbbeacaf77151472e407d019a8
 .git/objects/c7/29a6ddb8ea50af34c4e811becec4b2978c6c68
 .git/objects/c7/4aa72f821b1f56c15b6d7eae57e480e90aa3ad
@@ -192,6 +207,7 @@ setup.py
 .git/objects/d6/e74005ca95da65119eeaeec20e93ded72c3f51
 .git/objects/d7/bc9e5aa1dae731cede0a9352de0ea92baef347
 .git/objects/d8/1f60dba18f856c21a88502c03865809ef8d52b
+.git/objects/d8/c08bc4fa976dcd50f84f71bc29eee6dbe01ed4
 .git/objects/d8/e9a6f800bdac2b7501a292345c6d1de0f50003
 .git/objects/da/7de80421401bac50b2076bc1878cc78e222baf
 .git/objects/db/bc50bf8c8ffec16472cce91d24fe423e8c67df
@@ -203,9 +219,11 @@ setup.py
 .git/objects/e0/d16a1f488812958888a0103cd3a43bf35368ee
 .git/objects/e1/df1cfbfcfa4d90f787130d7bc547ddc3ee7822
 .git/objects/e2/0a27b768857b0807e250e531331ba16e8a94c3
+.git/objects/e3/3b9c7c13ffba0ca3039b11ac5f08bc2d2f08e0
 .git/objects/e5/1e9f3b78d6011037af461abf091aeaf0c94ec7
 .git/objects/e5/922154fc34755eb733f8080ddd0e039bdf7553
 .git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+.git/objects/e7/5baa5fff0021e40b0124a2ed472b54c3f9aef5
 .git/objects/e9/4352a4862c7e53390e284668cf0c6f3a8d01e8
 .git/objects/eb/45d72c265656b5c7a46b146649039088afeb65
 .git/objects/eb/f107a583043d4f458b54706f4810f197f1f1fc
@@ -214,7 +232,9 @@ setup.py
 .git/objects/ed/f0d9d11bf81cb5f12f8c28a8220cebd5349b0c
 .git/objects/ee/9785411a81b9028794872266298500d3a9e7e8
 .git/objects/ee/beb288c4e7a516ef230863319ed55ef35e0a3e
+.git/objects/ef/484b590cb91981f8ddc6bf651a8df72ff92986
 .git/objects/ef/730c723b7e04eedf17fd026e2ea8a26de79791
+.git/objects/f1/b1874ad60c960266221fc55b708cc860326528
 .git/objects/f1/c9199cd74e7e814ce79ac2362645cef7a46e72
 .git/objects/f2/8dbaa37e6a1f458eda22e9b16273938c682bea
 .git/objects/f2/b72b34554a58ca22a45c64965d1d3614baa095
@@ -259,8 +279,8 @@ eggdriver/news/config.py
 eggdriver/news/news.py
 eggdriver/nqs/__init__.py
 eggdriver/nqs/core/__init__.py
-eggdriver/nqs/core/core.py
 eggdriver/nqs/core/functions.py
+eggdriver/nqs/core/kernel.py
 eggdriver/nqs/core/quantum.py
 eggdriver/nqs/core/reader.py
 eggdriver/nqs/developer/__init__.py
@@ -279,7 +299,7 @@ eggdriver/resources/utils.py
 eggdriver/resources/web.py
 eggdriver/resources/algorithms/__init__.py
 eggdriver/resources/algorithms/solver/__init__.py
-eggdriver/resources/algorithms/solver/bijection.py
+eggdriver/resources/algorithms/solver/dichotomy.py
 eggdriver/resources/console/__init__.py
 eggdriver/resources/console/display.py
 eggdriver/resources/console/progress.py

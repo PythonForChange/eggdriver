@@ -1,1 +1,1 @@
-from eggdriver.resources.algorithms.solver.bijection import *
+from eggdriver.resources.algorithms.solver.dichotomy import *

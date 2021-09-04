@@ -1,8 +1,4 @@
-from eggdriver.resources.modules import install
-from eggdriver.resources.console import sleep
 from eggdriver.resources.server.ip import Device
-install("threading")
-sleep(100)
 import subprocess, sys, os, threading
 
 class PythonThread (threading.Thread):

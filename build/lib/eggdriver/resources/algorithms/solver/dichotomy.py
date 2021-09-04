@@ -1,15 +1,14 @@
 #dichotomy method
 
 import random
-
-inf = 1000000
-R = [-inf, inf]
+from eggdriver.resources.constants import R
 
 def truncate(num, n):
     integer = int(num * (10**n))/(10**n)
     return float(integer)
 
-def zero(function, bias = 0, domain = R,  accurancy = 16):
+def root(function, bias = 0, domain = R,  accurancy = 16):
+    """Gives a root of function(x) = bias, in a certain domain"""
     error = 10 ** (- accurancy - 5)
     while True:
         bound = [random.uniform(domain[0], domain[1]), random.uniform(domain[0], domain[1])]
@@ -28,4 +27,4 @@ def zero(function, bias = 0, domain = R,  accurancy = 16):
             b = mean
         else:
             a = mean
-    return "There is not a zero in this domain"
+    return "There is not a root in this domain"

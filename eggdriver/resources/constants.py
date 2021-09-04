@@ -27,3 +27,6 @@ limit = "|"
 square = 2 * segment
 whiteSquare = white + square
 blackSquare = black + square
+
+inf = 1000000
+R = [-inf, inf]

@@ -1,5 +1,5 @@
 from eggdriver.resources.console import get, clearConsole, pg
-from eggdriver.resources.constants import *
+from eggdriver.resources.constants import white
 from eggdriver.resources.modules import installFromRequests, upgrade, Repo
 from eggdriver.resources.help import help
 from eggdriver.resources.auth import login, register
@@ -29,7 +29,7 @@ This is the reason why condition only allows <<bool>> as data type
 def eggConsole(condition: bool = True):
     """Display the Egg Console"""
     print(white + "Egg Console is now running")
-    logged=0
+    logged = 0
     while condition:
         i = get("egg")
         if i == "$nqs":

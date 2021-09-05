@@ -1,7 +1,6 @@
 import time, os, sys, subprocess
-from eggdriver.resources.constants import *
 
-def sleep(i: int =100):
+def sleep(i: int = 100):
     	time.sleep(i/1000)
 
 def clearConsole():

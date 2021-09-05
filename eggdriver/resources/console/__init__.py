@@ -1,5 +1,6 @@
 from eggdriver.resources.console.display import *
 from eggdriver.resources.console.progress import *
+from eggdriver.resources.constants import white, blue, green
 
 def get(tag: str):
 	i = input(blue + "$" + tag + "> " + green)

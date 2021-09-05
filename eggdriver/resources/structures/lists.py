@@ -1,28 +1,25 @@
 from eggdriver.resources.structures.iterators import Iterator
 
-class List():
+class List(list):
     def __init__(self, list = []):
-        self.list = list
-    def sort(self):
-        self.list.sort()
-    def reverse(self):
-        self.list = self.list.reverse
+        super().__init__()
+        [self.append(i) for i in list]
     def addFirst(self, item):
         self.reverse()
         self.addLast(item)
         self.reverse()
     def addLast(self, item):
-        self.list.append(item)
+        self.append(item)
     def removeFirst(self):
-        self.list = self.list[1:]
+        self = self[1:]
     def removeLast(self):
         self.reverse()
         self.removeFirst()
         self.reverse()
     def contains(self, item):
-        return item in self.list
+        return item in self
     def Iterator(self):
-        return Iterator(self.list)
+        return Iterator(self)
     def iterate(self, function):
         i = self.Iterator()
         for index in i.indexes:
@@ -32,13 +29,13 @@ class List():
         self.iterate(print)
     @property
     def first(self):
-        return self.list[0]
+        return self[0]
     @property
     def last(self):
-        return self.list[0]
+        return self[-1]
     @property
     def size(self):
-        return len(self.list)
+        return len(self)
     @property
     def isEmpty(self):
         return self.size == 0

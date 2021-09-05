@@ -13,3 +13,4 @@ include setup.py
 # Include the data files
 recursive-include .git *
 recursive-include .vscode *<s
+include test.py

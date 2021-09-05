@@ -1,11 +1,6 @@
-#dichotomy method
-
 import random
-from eggdriver.resources.constants import R
-
-def truncate(num, n):
-    integer = int(num * (10**n))/(10**n)
-    return float(integer)
+from eggdriver.resources.math.constants import R
+from eggdriver.resources.math.float import truncate
 
 def root(function, bias = 0, domain = R,  accurancy = 16):
     """Gives a root of function(x) = bias, in a certain domain"""

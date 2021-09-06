@@ -1,4 +1,5 @@
 from eggdriver.resources.structures.lists import List
+from eggdriver.resources.utils import indexes
 
 def dualExpand(a, b):
     if a.size < b.size:
@@ -35,6 +36,33 @@ def scale(vector, scalar):
     if vector.size != 0:
         for i in vector:
             result.append(scalar * i)
+    return result
+
+def vectorize(poly: str):
+    p = poly.split(" ")
+    result = Vector()
+    coefs = List()
+    exps = List()
+    for i in p:
+        temp = i + "^1"
+        monomial = temp.strip("+").split("^")
+        c = monomial[0].strip("x")
+        if c == "":
+            coef = 1.0
+        else:
+            coef = float(c)
+        exp = int(monomial[1])
+        if "x" not in i:
+            exp = 0
+        coefs.append(coef)
+        exps.append(exp)
+    degree = 0
+    for i in indexes(exps):
+        if exps[i] > degree:
+            degree = exps[i]
+    result.expand(degree + 1)
+    for i in indexes(coefs):
+        result[exps[i]] += coefs[i]
     return result
 
 class Vector(List):

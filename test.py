@@ -1,20 +1,6 @@
-from eggdriver import lim, inf, add, constant, positiveInfinity, Polynomial, pi
-
-def f(x):
-    return x**2
-
-print(lim(f, inf))
-
-def g(x):
-    return 1 / x
-
-print(lim(g, inf))
-
-u = Polynomial([0, -49, 0, 1]).times(Polynomial([-3.9, 1]))
-v = u.times(Polynomial([-2, 1])).times(Polynomial([-11, 1]))
-v.display()
-print(v.zeros)
+from eggdriver import Polynomial, vectorize
 
 
-print(add(constant(3), constant(5)))
-print(add(constant(3), constant(positiveInfinity)))
+u = Polynomial("7 +x -49x^2 -2x^9 +x^40 +3x^2")
+u.display()
+

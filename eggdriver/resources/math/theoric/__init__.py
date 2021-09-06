@@ -2,12 +2,8 @@ class infinity():
     def __init__(self, name):
         self.value = name
 
-class constant():
-    def __init__(self, x):
-        self.value = x
-
 def isConstant(x):
-    return type(x) == constant
+    return type(x) == int or type(x) == float
 
 positiveInfinity = infinity("positiveInfinity")
 negativeInfinity = infinity("negativeInfinity")
@@ -18,7 +14,7 @@ def isInfinity(x):
 
 def add(x, y):
     if isConstant(x) and isConstant(y):
-        return x.value + y.value
+        return x + y
     elif isConstant(x) and isInfinity(y):
         return y.value
     elif isConstant(y) and isInfinity(x):
@@ -33,7 +29,7 @@ def multiply(x, y):
     if x == undefined or y == undefined:
         return undefined
     elif isConstant(x) and isConstant(y):
-        return x.value * y.value
+        return x * y
     if isConstant(x) and isInfinity(y):
         if x == 0:
             return undefined.value
@@ -50,6 +46,3 @@ def multiply(x, y):
             return positiveInfinity.value
         else:
             return negativeInfinity.value
-
-class variable():
-    pass

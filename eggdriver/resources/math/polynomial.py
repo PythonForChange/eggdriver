@@ -1,4 +1,4 @@
-from eggdriver.resources.math.linear import Vector, dualExpand
+from eggdriver.resources.math.linear import Vector, dualExpand, vectorize
 from eggdriver.resources.math.algorithms.solver import solve
 
 def x_(i, variable = "x"):
@@ -40,9 +40,6 @@ def times(a, b):
             result = result.plus(product)
     return result
 
-def vectorize(poly: str):
-    pass
-
 class Polynomial(Vector):
     def __init__(self, poly = [], variable = "x"):
         if type(poly) != list:
@@ -60,7 +57,7 @@ class Polynomial(Vector):
                 if self[i] > 0:
                     nonZeros += 1
                 if self[i] > 0 and nonZeros > 1:
-                    result.append("+ " + str(self[i]) + x_(i, self.var))
+                    result.append("+" + str(self[i]) + x_(i, self.var))
                 elif self[i] != 0:
                     result.append(str(self[i]) + x_(i, self.var))
         text = ""

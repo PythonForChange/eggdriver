@@ -1,10 +1,10 @@
 from eggdriver.resources.structures.lists import List
-from eggdriver.resources.structures.matrices import Matrix
+from eggdriver.resources.structures.matrices import listMatrix
 from eggdriver.resources.modules import installFromRequests
 from eggdriver.resources.console import sleep
 from eggdriver.resources.constants import limit, square, whiteSquare, blackSquare
 
-class Image(Matrix):
+class Image(listMatrix):
     def __init__(self, listOfLists = []):
         installFromRequests(["numpy", "tensorflow", "keras", "Pillow", "Colr"], False) # Install
         super().__init__(listOfLists)

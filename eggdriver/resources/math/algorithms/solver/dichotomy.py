@@ -4,7 +4,7 @@ from eggdriver.resources.math.float import truncate
 
 def root(function, bias = 0, domain = R,  accurancy = 16):
     """Gives a root of function(x) = bias, in a certain domain"""
-    error = 10 ** (- accurancy - 5)
+    error = 10 ** (- accurancy - 100)
     while True:
         bound = [random.uniform(domain[0], domain[1]), random.uniform(domain[0], domain[1])]
         bound.sort()
@@ -17,7 +17,7 @@ def root(function, bias = 0, domain = R,  accurancy = 16):
         mean = (a + b) / 2
         fm = function(mean) - bias
         if abs(fm) < error:
-            return truncate(round(mean, accurancy + 3), accurancy)
+            return round(mean, accurancy)
         if fa * fm < 0:
             b = mean
         else:

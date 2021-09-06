@@ -1,4 +1,4 @@
-from eggdriver import lim, inf, add, constant, positiveInfinity, Polynomial
+from eggdriver import lim, inf, add, constant, positiveInfinity, Polynomial, pi
 
 def f(x):
     return x**2
@@ -10,11 +10,10 @@ def g(x):
 
 print(lim(g, inf))
 
-v = Polynomial([0, 2, 0, 9])
-ww = v.power(3)
+u = Polynomial([0, -49, 0, 1]).times(Polynomial([-3.9, 1]))
+v = u.times(Polynomial([-2, 1])).times(Polynomial([-11, 1]))
 v.display()
-ww.display()
-
+print(v.zeros)
 
 
 print(add(constant(3), constant(5)))

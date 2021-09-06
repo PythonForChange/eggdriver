@@ -18,6 +18,11 @@ class List(list):
         self.reverse()
     def contains(self, item):
         return item in self
+    def display(self):
+        text = "[ "
+        for i in self:
+            text += str(i) + " "
+        print(text + "]")
     def Iterator(self):
         return Iterator(self)
     def iterate(self, function):
@@ -25,8 +30,6 @@ class List(list):
         for index in i.indexes:
             function(i.value)
             i.next()
-    def display(self):
-        self.iterate(print)
     @property
     def first(self):
         return self[0]

@@ -2,9 +2,6 @@ class infinity():
     def __init__(self, name):
         self.value = name
 
-def isInfinity(x):
-    return type(x) == infinity
-
 class constant():
     def __init__(self, x):
         self.value = x
@@ -15,6 +12,9 @@ def isConstant(x):
 positiveInfinity = infinity("positiveInfinity")
 negativeInfinity = infinity("negativeInfinity")
 undefined = infinity("undefined")
+
+def isInfinity(x):
+    return (x in [positiveInfinity, negativeInfinity, undefined])
 
 def add(x, y):
     if isConstant(x) and isConstant(y):

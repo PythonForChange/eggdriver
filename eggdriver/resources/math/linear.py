@@ -13,7 +13,7 @@ def plus(a, b, autoExpand = False):
         if autoExpand:
             dualExpand(a, b)
         else:
-            raise Exception("Vectors have to be of the same size")
+            raise LinearError
     if len(a) != 0 and len(a) == len(b):
         for i in range(0, a.size):
             result.append(a[i] + b[i])
@@ -25,7 +25,7 @@ def dot(a, b, autoExpand = False):
         if autoExpand:
             dualExpand(a, b)
         else:
-            raise Exception("Vectors have to be of the same size")
+            raise LinearError
     if len(a) != 0 and len(a) == len(b):
         for i in range(0, a.size):
             result += a[i] * b[i]
@@ -39,6 +39,7 @@ def scale(vector, scalar):
     return result
 
 def vectorize(poly: str):
+    """Transform a string polynomial into a coordinates vector"""
     p = poly.split(" ")
     result = Vector()
     coefs = List()
@@ -76,4 +77,23 @@ class Vector(List):
         return scale(self, scalar)
     def expand(self, scalar):
         [self.append(0) for i in range(0, scalar)]
+
+class Matrix(Vector):
+    def __init__(self, n, m):
+        vectorOfVectors = Vector()
+        for i in range(m):
+            v = Vector()
+            v.expand(n)
+            vectorOfVectors.append(v)
+        super().__init__(vectorOfVectors)
+    def display(self):
+        for i in self:
+            print(i.display(True, ["(", ")"]))
+
+class LinearError(Exception):
+    def __init__(self, type = 0):
+        message = {
+            0: "Vectors have to be of the same size"
+        }
+        super().__init__(message[type])
 

@@ -18,11 +18,14 @@ class List(list):
         self.reverse()
     def contains(self, item):
         return item in self
-    def display(self):
-        text = "[ "
+    def display(self, returnText = False, symbols = ["[", "]"]):
+        text = symbols[0] + " "
         for i in self:
             text += str(i) + " "
-        print(text + "]")
+        if returnText:
+            return text + symbols[1]
+        else:
+            print(text + "]")
     def Iterator(self):
         return Iterator(self)
     def iterate(self, function):

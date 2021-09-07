@@ -11,3 +11,4 @@ def colour(id: int, bgcolor: int = 0):
 
 def indexes(x):
     return range(0, len(x))
+

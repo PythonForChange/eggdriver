@@ -40,6 +40,12 @@ def times(a, b):
             result = result.plus(product)
     return result
 
+def fromZeros(zeros = []):
+    result = Polynomial(1)
+    for i in zeros:
+        result = Polynomial([-i, 1]).times(result)
+    return result
+
 class Polynomial(Vector):
     def __init__(self, poly = [], variable = "x"):
         if type(poly) != list:

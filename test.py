@@ -1,6 +1,7 @@
-from eggdriver import Polynomial, vectorize
+from eggdriver import Matrix, Vector
 
-
-u = Polynomial("7 +x -49x^2 -2x^9 +x^40 +3x^2")
+v = Vector()
+v.expand(3)
+v.display()
+u = Matrix(3, 3)
 u.display()
-

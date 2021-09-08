@@ -13,9 +13,9 @@ py -m twine upload dist/*
 def build(setupFile = "setup.py", autoVersion = True):
     """Build and upload a pypi package release"""
     installFromRequests(["setuptools", "twine", "build"], False)
-    if autoVersion:
-        # setup = py.getLines(setupFile)
-        # v = '0.0.1a8'
+    #if autoVersion:
+    #   setup = py.getLines(setupFile)
+    #   v = '0.0.1a8'
     sysCommand("-m build --sdist")
     sysCommand("-m build --wheel")
     sysCommand("-m twine check dist/*")

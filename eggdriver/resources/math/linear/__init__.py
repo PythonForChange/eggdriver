@@ -1,9 +1,13 @@
 from eggdriver.resources.structures.lists import List
 from eggdriver.resources.utils import indexes
+from eggdriver.resources.math.linear.utils import *
 
 class Vector(List):
-    def __init__(self, list = []):
-        super().__init__(list)
+    def __init__(self, vanillaList = []):
+        if type(vanillaList) == str:
+            temp = vanillaList.replace("[", "").replace("]", "")
+            vanillaList = list(map(int, temp.split()))
+        super().__init__(vanillaList)
     def plus(self, vector):
         return plus(self, vector)
     def dot(self, vector):
@@ -43,14 +47,9 @@ class Matrix(Vector):
     def m(self):
         return len(self[0])
 
-class LinearError(Exception):
-    def __init__(self, type = 0):
-        message = {
-            0: "Vectors have to be of the same size",
-            1: "Matrix must be a squared matrix",
-            2: "Number of rows (n) must not be 0"
-        }
-        super().__init__(message[type])
+def rowReduce(matrix: Matrix):
+    result = Vector()
+    return result
 
 def determinant(M):
     result = M[0][0]
@@ -75,12 +74,6 @@ def subMatrix(M, row, column):
             result.append(v)
     return result
 
-def dualExpand(a, b):
-    if a.size < b.size:
-        a.expand(b.size - a.size)
-    else:
-        b.expand(a.size - b.size)
-
 def plus(a, b, autoExpand = False):
     result = Vector()
     if len(a) != len(b):
@@ -91,18 +84,6 @@ def plus(a, b, autoExpand = False):
     if len(a) != 0 and len(a) == len(b):
         for i in range(0, a.size):
             result.append(a[i] + b[i])
-    return result
-
-def dot(a, b, autoExpand = False):
-    result = 0
-    if len(a) != len(b):
-        if autoExpand:
-            dualExpand(a, b)
-        else:
-            raise LinearError
-    if len(a) != 0 and len(a) == len(b):
-        for i in range(0, a.size):
-            result += a[i] * b[i]
     return result
 
 def scale(vector, scalar):
@@ -139,6 +120,3 @@ def vectorize(poly: str):
     for i in indexes(coefs):
         result[exps[i]] += coefs[i]
     return result
-
-
-

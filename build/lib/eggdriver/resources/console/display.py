@@ -1,7 +1,6 @@
 import time, os, sys, subprocess
-from eggdriver.resources.constants import *
 
-def sleep(i: int =100):
+def sleep(i: int = 100):
     	time.sleep(i/1000)
 
 def clearConsole():
@@ -18,7 +17,8 @@ def display(T, delta: int = 400, condition: bool = True):
 
 def sysCommand(command: str):
 	commands = command.split()
-	temp = commands.reverse()
-	temp.append(sys.executable)
-	commands = temp.reverse()
+	commands.reverse()
+	# commands.append(sys.executable) Not works yet, instead:
+	commands.append("py") # Just on Windows
+	commands.reverse()
 	subprocess.check_call(commands)

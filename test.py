@@ -1,7 +1,12 @@
-from eggdriver import Matrix, Vector
+from eggdriver import build, Matrix
 
-v = Vector()
-v.expand(3)
-v.display()
-u = Matrix(3, 3)
-u.display()
+build()
+
+c = Matrix("""
+| 1 1 2 3 4 |
+| 0 1 2 3 4 |
+| 1 1 2 3 4 |
+| 1 1 2 3 4 |
+| 1 1 2 3 4 |
+""", 4, 5)
+c.display()

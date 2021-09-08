@@ -9,7 +9,7 @@ def solve(function, bias = 0, domain = R,  accurancy = 16, degree = 1, alerts = 
     while roots.size < degree and count < inf:
         if not customDomain:
             domain = [- 2.0 ** int(count), 2.0 ** int(count)]
-        r = root(function, bias, domain, accurancy)
+        r = root(function, -bias, domain, accurancy)
         roots.insert(str(r))
         if alerts:
             print(degree - roots.size, "solutions remaining")

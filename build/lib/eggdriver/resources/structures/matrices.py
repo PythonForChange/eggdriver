@@ -1,6 +1,6 @@
 from eggdriver.resources.structures.lists import List
 
-class Matrix(List):
+class listMatrix(List):
     def __init__(self, listOfLists = []):
         super().__init__(listOfLists)
     def flatIterator(self):

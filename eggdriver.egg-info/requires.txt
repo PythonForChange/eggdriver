@@ -2,7 +2,6 @@ numpy
 tensorflow
 keras
 Colr
-threading
 
 [bs4]
 bs4

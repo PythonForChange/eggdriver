@@ -1,51 +1,6 @@
 from eggdriver.resources.math.linear import Vector, dualExpand, vectorize
 from eggdriver.resources.math.algorithms.solver import solve
 
-def x_(i, variable = "x"):
-    if i == 0 :
-        return ""
-    elif i == 1:
-        return variable
-    return f"{variable}^{i}"
-
-def plusPoly(a, b):
-    if type(a) != Polynomial:
-        a = Polynomial([a])
-    if type(b) != Polynomial:
-        b = Polynomial([b])
-    result = Polynomial()
-    if len(a) != len(b):
-        dualExpand(a, b)
-    if len(a) != 0 and len(a) == len(b):
-        for i in range(0, a.size):
-            result.append(a[i] + b[i])
-    return result
-
-def scalePoly(polynomial, scalar):
-    result = Vector()
-    if polynomial.size != 0:
-        for i in polynomial:
-            result.append(scalar * i)
-    return result
-
-def times(a, b):
-    result = Polynomial()
-    if len(a) != 0:
-        for i in range(0, len(a)):
-            product = Polynomial()
-            for j in range(0, i):
-                product.append(0)
-            for j in b.scale(a[i]):
-                product.append(j)
-            result = result.plus(product)
-    return result
-
-def fromZeros(zeros = []):
-    result = Polynomial(1)
-    for i in zeros:
-        result = Polynomial([-i, 1]).times(result)
-    return result
-
 class Polynomial(Vector):
     def __init__(self, poly = [], variable = "x"):
         if type(poly) != list:
@@ -95,3 +50,50 @@ class Polynomial(Vector):
             if self[i] != 0:
                 deg = i
         return deg
+
+def x_(i, variable = "x"):
+    if i == 0 :
+        return ""
+    elif i == 1:
+        return variable
+    return f"{variable}^{i}"
+
+def plusPoly(a, b):
+    if type(a) != Polynomial:
+        a = Polynomial([a])
+    if type(b) != Polynomial:
+        b = Polynomial([b])
+    result = Polynomial()
+    if len(a) != len(b):
+        dualExpand(a, b)
+    if len(a) != 0 and len(a) == len(b):
+        for i in range(0, a.size):
+            result.append(a[i] + b[i])
+    return result
+
+def scalePoly(polynomial, scalar):
+    result = Vector()
+    if polynomial.size != 0:
+        for i in polynomial:
+            result.append(scalar * i)
+    return result
+
+def times(a, b):
+    result = Polynomial()
+    if len(a) != 0:
+        for i in range(0, len(a)):
+            product = Polynomial()
+            for j in range(0, i):
+                product.append(0)
+            for j in b.scale(a[i]):
+                product.append(j)
+            result = result.plus(product)
+    return result
+
+def fromZeros(zeros = []):
+    result = Polynomial(1)
+    for i in zeros:
+        result = Polynomial([-i, 1]).times(result)
+    return result
+
+

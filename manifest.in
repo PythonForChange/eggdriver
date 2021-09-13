@@ -14,4 +14,3 @@ include setup.py
 recursive-include .git *
 recursive-include .vscode *<s
 include test.py
-include oldVersions

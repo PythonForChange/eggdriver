@@ -1,5 +1,4 @@
-v = '0.0.1a8'
-
+v = "0.0.1a9"
 """A setuptools based setup module.
 See:
 https://packaging.python.org/guides/distributing-packages-using-setuptools/

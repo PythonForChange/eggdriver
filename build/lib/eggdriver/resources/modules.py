@@ -4,6 +4,12 @@ from eggdriver.resources.constants import white
 from eggdriver.resources.extensions import withoutFormat
 from eggdriver.resources.console import ProgressBar
 
+def fail():
+    print(white + "Install failed")
+
+def sucess(name):
+    print(white + name + " succesfully installed")
+
 def isntInstalled(package):
     """Returns True if a PyPI is not installed"""
     spec = importlib.util.find_spec(package)
@@ -12,13 +18,13 @@ def isntInstalled(package):
         return True
     return False
 
-def install_option_1(name: str):
+def install_option_1(*names):
     """Implement pip as a subprocess"""
-    if name == "$upgrade":
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', 'pip'])
-    else:
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', name])
-    return "done"
+    for name in names:
+        if name == "$upgrade":
+            subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', 'pip'])
+        else:
+            subprocess.check_call([sys.executable, '-m', 'pip', 'install', name])
 
 def install_option_2(name: str):
     """Implement pip using pip package"""
@@ -48,21 +54,63 @@ def installFromGithub(userOrOrganization: str, packages: list):
         print(white + package +" succesfully installed")
         print(white + f"Try \'import {package}\'")
 
-def install(name: str):
-    """Install a PyPI package"""
-    try:
-        installFromRequests(name,0)
-        #raise Exception("error")
-    except:
-        print(white + "Install failed")
-        print(white + "Retrying...")
+def installFromPip(*packages):
+    """Install PyPI packages"""
+    for name in packages:
         try:
-            install_option_2(name)
+            installFromRequests(name,0)
+            sucess(name)
         except:
-            print(white + "Install failed")
-            return "error"
-    print(white + name + " succesfully installed")
-    return "done"
+            fail()
+            print(white + "Retrying...")
+            try:
+                install_option_2(name)
+                sucess(name)
+            except:
+                fail()
+
+def installFromPipwin(*packages):
+    """Install unofficial python packages binaries for Windows provided by Christoph Gohlke"""
+    if isntInstalled("pipwin"):
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', "pipwin"])
+    for name in packages:
+        try:
+            subprocess.check_call([sys.executable, '-m', 'pipwin', 'install', name])
+            sucess(name)
+        except:
+            fail()
+
+def installFromEasyinstall(*packages):
+    """Install easyinstall packages"""
+    if isntInstalled("easyinstall"):
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', "easyinstall"])
+    for name in packages:
+        try:
+            subprocess.check_call([sys.executable, '-m', 'easyinstall', 'install', name])
+            sucess(name)
+        except:
+            fail()
+
+def install(*packages):
+    """Install python packages"""
+    for name in packages:
+        try:
+            installFromPip(name)
+            sucess(name)
+        except:
+            fail()
+            print(white + "Retrying...")
+            try:
+                installFromPipwin(name)
+                sucess(name)
+            except:
+                fail()
+                print(white + "Retrying...")
+                try:
+                    installFromEasyinstall(name)
+                    sucess(name)
+                except:
+                    fail()
 
 def upgrade(name: str):
     """Update a PyPI package"""
@@ -70,7 +118,6 @@ def upgrade(name: str):
         subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', name])
     except:
         print(white + name + " succesfully ugraded")
-    return "done"
 
 class Repo():
     """Github Repo class"""

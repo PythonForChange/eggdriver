@@ -6,7 +6,9 @@ if wannaBuildRelease:        ##     to build a new release!
     build()                  ##
 ###############################
 
-from eggdriver import  Matrix, Vector
+from eggdriver import  Matrix, Vector, build
+
+build()
 
 c = Matrix("""
 | 1 1 2 3 4 |
@@ -19,3 +21,4 @@ c.display()
 
 a = Vector("[ 1 2 3 4 5 6 30 0 9]")
 a.display()
+

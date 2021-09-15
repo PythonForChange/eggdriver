@@ -6,7 +6,7 @@ if wannaBuildRelease:        ##     to build a new release!
     build()                  ##
 ###############################
 
-from eggdriver import  Matrix, Vector, build
+from eggdriver import  Matrix, Vector, WEBCAM, build, changeBackground, blur, solidBackground
 
 c = Matrix("""
 | 1 1 2 3 4 |
@@ -20,3 +20,5 @@ c.display()
 a = Vector("[ 1 2 3 4 5 6 30 0 9]")
 a.display()
 
+w = WEBCAM("Emmanuel")
+w.default(background_effects= [(blur, [])], effects = [(changeBackground, [solidBackground()])])

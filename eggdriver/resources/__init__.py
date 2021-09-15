@@ -11,6 +11,7 @@ from eggdriver.resources.strings import *
 from eggdriver.resources.utils import *
 from eggdriver.resources.web import *
 from eggdriver.resources.math import *
+from eggdriver.resources.video import *
 
 author="eanorambuena"
 author_email="eanorambuena@uc.cl"

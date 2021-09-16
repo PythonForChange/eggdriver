@@ -2,6 +2,10 @@ numpy
 tensorflow
 keras
 Colr
+opencv-contrib-python
+mediapipe
+pipwin
+easyinstall
 
 [bs4]
 bs4

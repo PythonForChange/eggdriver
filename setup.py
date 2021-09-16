@@ -1,4 +1,5 @@
-v = "0.0.1a9"
+v = "0.0.1a10"
+
 """A setuptools based setup module.
 See:
 https://packaging.python.org/guides/distributing-packages-using-setuptools/
@@ -143,7 +144,7 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires = ["numpy", "tensorflow", "keras", "Colr"],  # Optional
+    install_requires = ["numpy", "tensorflow", "keras", "Colr", "opencv-contrib-python", "mediapipe", "pipwin", "easyinstall"],  # Optional
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"

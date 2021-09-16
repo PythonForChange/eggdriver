@@ -18,9 +18,9 @@ def itself(var):
 def count(value = 100, step = 1):
     global counterIterator
     counterIterator += step
-    print(counterIterator)
+    print(value - counterIterator)
     result = counterIterator < value
-    return counterIterator < value
+    return result
 
 defaultEffect = [(itself, [])]
 defaultCondition = (count, [100])

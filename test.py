@@ -1,14 +1,19 @@
 ###############################
-wannaBuildRelease = False    ##     ** Build panel **
+wannaBuildRelease = False   ##     ** Build panel **
 ###############################     Set
-from eggdriver import build  ##         wannaBuildRelease = True 
+import eggdriver as ed       ##         wannaBuildRelease = True 
 if wannaBuildRelease:        ##     to build a new release!
-    build()                  ##
+    ed.buildEggdriver()      ##
 ###############################
 
-from eggdriver import  Matrix, Vector, WEBCAM, build, changeBackground, blur, solidBackground
+ed.sysCommand("-m build --sdist")
+ed.sysCommand("-m build --wheel")
+ed.sysCommand("-m twine check dist/*")
+ed.sysCommand("-m twine upload dist/*")
 
-c = Matrix("""
+print(ed.ver)
+
+c = ed.Matrix("""
 | 1 1 2 3 4 |
 | 0 1 2 3 4 |
 | 1 1 2 3 4 |
@@ -17,8 +22,8 @@ c = Matrix("""
 """, 4, 5)
 c.display()
 
-a = Vector("[ 1 2 3 4 5 6 30 0 9]")
+a = ed.Vector("[ 1 2 3 4 5 6 30 0 9]")
 a.display()
 
-w = WEBCAM("Emmanuel")
-w.default(background_effects= [(blur, [])], effects = [(changeBackground, [solidBackground()])])
+w = ed.WEBCAM("Emmanuel")
+w.default(background_effects= [(ed.blur, [])], effects = [(ed.changeBackground, [ed.solidBackground()])])

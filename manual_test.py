@@ -6,7 +6,9 @@ if wannaBuildRelease:        ##     to build a new release!
     ed.buildEggdriver()      ##
 ###############################
 
-ed.header("uwu")
+ed.eggConsole()
+
+# ed.header("uwu")
 
 def g(x):
     return x**2

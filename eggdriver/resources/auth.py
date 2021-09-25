@@ -3,26 +3,31 @@ from eggdriver.resources.constants import white
 from eggdriver.resources.extensions import py
 
 def login():
-    print(white+"Username:")
-    j=get("egg")
+    print(white + "Username:")
+    u = get("egg")
+    logged = False
     try:
-        from user.private import username,password
-        if j==username:
-            print(white+"Password:")
-            k=get("egg")
-            if k==password:
-                logged=1
-                print(white+"Done") 
+        from eggconfig import username, password
+        if u == username:
+            print(white + "Password:")
+            p = get("egg")
+            if p == password:
+                logged = True
+                print(white + "Done") 
+    except ImportError:
+        print(white + "Please create a eggconfig.py file in your current directory and execute $register command into EggCOnsole")
     except:
-        pass
+        print(white + "Error")
+    return logged
 
 def register():
     try:
-        print(white+"Username:")
-        j=get("egg")
-        print(white+"Password:")
-        k=get("egg")
-        py.write("user/private","username,password=\"username\",\"password\"")
-        print(white+"Done")
+        print(white + "Username:")
+        username = get("egg")
+        print(white + "Password:")
+        password = get("egg")
+        text = f"username, password = \"{username}\", \"{password}\""
+        py.append(text, "eggconfig")
+        print(white + "Done")
     except:
-        pass 
+        print(white + "Error")

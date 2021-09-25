@@ -1,14 +1,14 @@
 from eggdriver.resources.console import get, clearConsole, pg
-from eggdriver.resources.constants import white
+from eggdriver.resources.constants import white, blue, green
 from eggdriver.resources.modules import installFromRequests, upgrade, Repo
-from eggdriver.resources.help import help
+from eggdriver.resources.help import welcome
 from eggdriver.resources.auth import login, register
 
 """
-FUNCTION eggConsole(condition: bool = True)
+FUNCTION eggConsole(command = None)
 
-Display the Egg Console
-Currently, the Egg Console commands are:
+Display the Eggdriver Console
+Currently, the Eggdriver Console commands are:
 
 $nqs        Start the NQS Depeloper console
 $new        Start the News Journalist console
@@ -19,19 +19,23 @@ $upgrade    Upgrade a pip package
 $pull       Import a package stored on a GitHUb repository *comming soon: currently, just use github_com package*
 $help       Get started command
 $clear      Clear the Egg Console
-$end        End the Egg Console
+$end        End the Eggdriver Console
 
 WARNING:
-Always  use $end command in every console you run
-*ONLY use a condition different to True as an argument of eggConsole(condition) if you know what are you doing**
-This is the reason why condition only allows <<bool>> as data type
+Always use $end command in every console you run
 """
-def eggConsole(condition: bool = True):
-    """Display the Egg Console"""
-    print(white + "Egg Console is now running")
-    logged = 0
+def eggConsole(command = None):
+    """Display the Eggdriver Console"""
+    print(white + "Eggdriver Console is now running")
+    condition = True
+    logged = False
     while condition:
-        i = get("egg")
+        if command == None:
+            i = get("egg")
+        else:
+            i = "$" + str(command)
+            print(blue + "$egg> " + green + i + white + "executed")
+            condition = False
         if i == "$nqs":
             from eggdriver.nqs import developerConsole
             developerConsole()
@@ -39,7 +43,7 @@ def eggConsole(condition: bool = True):
             from eggdriver.news import journalistConsole
             journalistConsole()
         elif i == "$login":
-            login()
+            logged = login()
         elif i == "$register":
             register()
         elif i == "$install":
@@ -54,11 +58,11 @@ def eggConsole(condition: bool = True):
             repo = Repo(org, name)
             repo.pull()
         elif i == "$help":
-            help()
+            welcome()
         elif i == "$clear":
             clearConsole()
         elif i == "$end":
-            print(white + "Egg Console stopped running")
-            return "done"
+            print(white + "Eggdriver Console stopped running")
+            return None
         else:
     	    pass

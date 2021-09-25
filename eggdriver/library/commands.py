@@ -1,7 +1,7 @@
-_author="eanorambuena"
-_author_email="eanorambuena@uc.cl"
+_author = "eanorambuena"
+_author_email = "eanorambuena@uc.cl"
 
-eggConsoleCommands=[
+eggConsoleCommands = [
   "nqs",
   "new",
   "login,"
@@ -14,7 +14,7 @@ eggConsoleCommands=[
   "end"
 ]
 
-developerConsoleCommands=[
+developerConsoleCommands = [
   "display",
   "compile",
   "save",
@@ -23,7 +23,7 @@ developerConsoleCommands=[
   "end"
 ]
 
-nqsCommands=[
+nqsCommands = [
   "host",
   "shots",
   "hist",
@@ -34,7 +34,8 @@ nqsCommands=[
   "delay"
 ]
 
-journalistConsoleCommands=[
+journalistConsoleCommands = [
   "save",
   "end"
 ]
+

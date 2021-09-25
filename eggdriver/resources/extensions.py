@@ -43,3 +43,4 @@ nqa = Lang("nqa")
 pfcf = Lang("pfcf")
 html = Lang("html")
 withoutFormat = Lang("")
+wf = withoutFormat

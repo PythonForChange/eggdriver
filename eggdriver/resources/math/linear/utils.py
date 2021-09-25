@@ -3,7 +3,7 @@ class LinearError(Exception):
         message = {
             0: "Vectors have to be of the same size",
             1: "Matrix must be a squared matrix",
-            2: "Number of rows (n) must not be 0"
+            2: "The number of rows and columns must be a positive interger"
         }
         super().__init__(message[type])
 

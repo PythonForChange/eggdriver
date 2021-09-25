@@ -1,4 +1,4 @@
-ver = "0.0.1a10"
+ver = "0.0.1b1"
 
 """Simply the current installed eggdriver version. The version information is
 stored in the regular eggdriver module as eggdriver.ver'. Keeping the version

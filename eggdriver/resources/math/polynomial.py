@@ -1,15 +1,19 @@
 from eggdriver.resources.math.linear import Vector, dualExpand, vectorize
 from eggdriver.resources.math.algorithms.solver import solve
+from eggdriver.resources.structures.objects import varName
+
+def x(var):
+    return var
 
 class Polynomial(Vector):
-    def __init__(self, poly = [], variable = "x"):
+    def __init__(self, poly = [], variable = x):
         if type(poly) != list:
             if type(poly) != str:
                 poly = [poly]
             else:
                 poly = vectorize(poly)
         super().__init__(poly)
-        self.var = variable
+        self.variable = variable
     def display(self):
         result = Polynomial()
         nonZeros = 0
@@ -18,9 +22,9 @@ class Polynomial(Vector):
                 if self[i] > 0:
                     nonZeros += 1
                 if self[i] > 0 and nonZeros > 1:
-                    result.append("+" + str(self[i]) + x_(i, self.var))
+                    result.append("+" + str(self[i]) + x_powered(i, self.var))
                 elif self[i] != 0:
-                    result.append(str(self[i]) + x_(i, self.var))
+                    result.append(str(self[i]) + x_powered(i, self.var))
         text = ""
         for i in result:
             text += i + " "
@@ -38,8 +42,15 @@ class Polynomial(Vector):
         result = 0
         for i in range(0, self.size):
             f = self[i]
-            result += f * (x ** i)
+            result += f * (self.variable(x) ** i)
         return result
+    @property
+    def var(self):
+        name = varName(self.variable)
+        if name != None:
+            return name
+        return "x"
+         
     @property
     def zeros(self):
         return solve(self.eval, degree = self.degree)
@@ -51,7 +62,7 @@ class Polynomial(Vector):
                 deg = i
         return deg
 
-def x_(i, variable = "x"):
+def x_powered(i, variable = "x"):
     if i == 0 :
         return ""
     elif i == 1:

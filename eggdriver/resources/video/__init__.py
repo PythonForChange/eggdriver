@@ -1,6 +1,5 @@
 import cv2
-import mediapipe as mp
-import numpy as np
+from eggdriver.resources.math.constants import itself
 from eggdriver.resources.video.effects import *
 from eggdriver.resources.video.backgrounds import *
 
@@ -11,9 +10,6 @@ def forever():
 
 def stop():
     return input()
-
-def itself(var):
-    return var
 
 def count(value = 100, step = 1):
     global counterIterator
@@ -69,6 +65,12 @@ def changeBackgroundWebCam(user = defaultUser, new_background = solidBackground(
     webCam(user, [(changeBackground, [new_background])] + effects, condition)
 
 class WEBCAM():
+    """Manage the default WEBCAM
+
+Eg:
+w = ed.WEBCAM("My name")
+w.default(background_effects= [(ed.blur, [])], effects = [(ed.changeBackground, [ed.solidBackground()])])
+# it turns on your WEBCAM and displays it with blur and green-screen effects added"""
     def __init__(self, user, condition = count, *args):
         self.user = user
         self.condition = (condition, args)

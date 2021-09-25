@@ -12,9 +12,6 @@ py -m build --wheel
 py -m twine check dist/*
 py -m twine upload dist/*
 """
-
-
-
 def build(autoVersion = True, baseVersion = defaultVersion):
     """Build and upload a pypi package release"""
     installFromRequests(["setuptools", "twine", "build"], False)

@@ -18,20 +18,24 @@ class Vector(List):
         [self.append(0) for i in range(0, scalar)]
 
 class Matrix(Vector):
-    def __init__(self, vectorOfVectors = [], n = 0, m = 0):
+    def __init__(self, vectorOfVectors = [], rows = 1, columns = 1, auto_size = True):
         if vectorOfVectors == []:
             vectorOfVectors = Vector()
-            for j in range(m):
+            for j in range(columns):
                 v = Vector()
-                v.expand(n)
+                v.expand(rows)
                 vectorOfVectors.append(v)
         elif type(vectorOfVectors) == str:
-            if n == 0:
+            if rows == 0 or columns == 0:
                 raise LinearError(2)
             else:
-                temp = vectorOfVectors.replace("|", "")
-                M = list(map(int, temp.split()))
-                output = [M[i:i + m] for i in range(0, len(M), m)]
+                temp1 = vectorOfVectors.replace("|", "")
+                if auto_size:
+                    temp2 = temp1.split("\n")
+                    temp3 = temp2[1] # Index is 1 because temp2[0] always is a void string ""
+                    columns = len(temp3.split()) 
+                M = list(map(int, temp1.split()))       
+                output = [M[i:i + columns] for i in range(0, len(M), columns)]
                 vectorOfVectors = list(map(Vector, output))
         super().__init__(vectorOfVectors)
     def display(self):

@@ -37,7 +37,7 @@ def eggConsole(command = None):
             print(blue + "$egg> " + green + i + white + "executed")
             condition = False
         if i == "$nqs":
-            from eggdriver.nqs import developerConsole
+            from nqs import developerConsole
             developerConsole()
         elif i == "$new":
             from eggdriver.news import journalistConsole

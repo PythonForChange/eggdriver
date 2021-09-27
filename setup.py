@@ -1,4 +1,4 @@
-v = "0.0.1b1"
+v = "0.0.1b2"
 
 """A setuptools based setup module.
 See:
@@ -89,7 +89,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
@@ -144,7 +144,7 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires = ["numpy", "tensorflow", "keras", "Colr", "opencv-contrib-python", "mediapipe", "pipwin"],  # Optional
+    install_requires = ["numpy", "tensorflow", "keras", "Colr", "opencv-contrib-python", "mediapipe", "pipwin", "nqs"],  # Optional
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"

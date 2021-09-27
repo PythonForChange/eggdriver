@@ -12,8 +12,11 @@ def PowerSerie(n_term, number_of_terms = series_inf):
 
 def cos_term(n):
     return ((-1) ** n) / factorial(2 * n), 2 * n
+
 cos_serie = PowerSerie(cos_term)
 
 def sin_term(n):
     return ((-1) ** n) / factorial(2 * n + 1), 2 * n + 1
+    
 sin_serie = PowerSerie(sin_term)
+

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: eggdriver
-Version: 0.0.1b1
+Version: 0.0.1
 Summary: Your proyect trusted driver.
 Home-page: https://github.com/PythonForChange/eggdriver
 Author: Emmanuel Norambuena
@@ -10,7 +10,7 @@ Project-URL: Bug Reports, https://github.com/PythonForChange/eggdriver/issues
 Project-URL: Source, https://github.com/PythonForChange/eggdriver
 Keywords: kit,quantum,development
 Platform: UNKNOWN
-Classifier: Development Status :: 3 - Alpha
+Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intended Audience :: Developers
 Classifier: Topic :: Software Development :: Build Tools
 Classifier: License :: OSI Approved :: MIT License
@@ -22,8 +22,6 @@ Classifier: Programming Language :: Python :: 3.9
 Classifier: Programming Language :: Python :: 3 :: Only
 Requires-Python: >=3.6, <4
 Description-Content-Type: text/markdown
-Provides-Extra: qiskit
-Provides-Extra: bs4
 License-File: LICENSE
 
 # eggdriver

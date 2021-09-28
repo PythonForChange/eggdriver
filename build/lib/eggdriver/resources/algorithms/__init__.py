@@ -1,1 +1,0 @@
-from eggdriver.resources.algorithms.solver import *

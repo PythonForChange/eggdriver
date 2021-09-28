@@ -1,6 +1,6 @@
 from eggdriver.resources import installFromRequests, sysCommand, py
 
-defaultVersion = '0.0.1a'
+defaultVersion = '0.0.'
 
 """
 FUNCTION build()

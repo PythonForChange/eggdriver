@@ -1,10 +1,10 @@
-###############################
-wannaBuildRelease = False    ##     ** Build panel **
-###############################     Set
-import eggdriver as ed       ##         wannaBuildRelease = True 
-if wannaBuildRelease:        ##     to build a new release!
-    ed.buildEggdriver()      ##
-###############################
+#############################################
+wannaBuildRelease = False                  ##     ** Build panel **
+#############################################     Set
+import eggdriver as ed                     ##         wannaBuildRelease = True 
+if wannaBuildRelease:                      ##     to build a new release!
+    ed.buildEggdriver(True, '0.0.2')      ##
+#############################################
 
 # ed.header("uwu")
 

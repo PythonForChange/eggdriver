@@ -5,9 +5,3 @@ Colr
 opencv-contrib-python
 mediapipe
 pipwin
-
-[bs4]
-bs4
-
-[qiskit]
-qiskit

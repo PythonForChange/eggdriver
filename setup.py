@@ -1,5 +1,4 @@
-v = "0.0.1b2"
-
+v = "0.0.1"
 """A setuptools based setup module.
 See:
 https://packaging.python.org/guides/distributing-packages-using-setuptools/
@@ -89,7 +88,7 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
@@ -144,7 +143,7 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires = ["numpy", "tensorflow", "keras", "Colr", "opencv-contrib-python", "mediapipe", "pipwin", "nqs"],  # Optional
+    install_requires = ["numpy", "tensorflow", "keras", "Colr", "opencv-contrib-python", "mediapipe", "pipwin"],# + ["nqs"] disabled
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
@@ -154,10 +153,7 @@ setup(
     #
     # Similar to `install_requires` above, these must be valid existing
     # projects.
-    extras_require = {  # Optional
-        'qiskit': ['qiskit'],
-        'bs4': ['bs4'],
-    },
+    # extras_require = { 'qiskit': ['qiskit'],'bs4': ['bs4'],}, # Optional
 
     # If there are data files included in your packages that need to be
     # installed, specify them here.
@@ -194,8 +190,8 @@ setup(
     # issues, where the source is hosted, where to say thanks to the package
     # maintainers, and where to support the project financially. The key is
     # what's used to render the link text on PyPI.
-    project_urls = {  # Optional
+    project_urls = {  
         'Bug Reports': 'https://github.com/PythonForChange/eggdriver/issues',
         'Source': 'https://github.com/PythonForChange/eggdriver',
-    },
+    }, # Optional
 )

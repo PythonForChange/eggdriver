@@ -15,7 +15,7 @@ def login():
                 logged = True
                 print(white + "Done") 
     except ImportError:
-        print(white + "Please create a eggconfig.py file in your current directory and execute $register command into EggCOnsole")
+        print(white + "Please create a eggconfig.py file in your current directory and execute $register command into EggConsole")
     except:
         print(white + "Error")
     return logged

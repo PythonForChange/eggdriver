@@ -1,19 +1,18 @@
-from eggdriver.resources import installFromRequests, sysCommand, py
+from eggdriver.resources import installFromRequests, sysCommand, py, white
 
 defaultVersion = '0.0.'
 
-"""
+def build(autoVersion = True, baseVersion = defaultVersion):
+    """Build and upload a PyPI package release
+
 FUNCTION build()
-Build and upload a pypi package release
 
 In Windows is equal to type in the console the following lines:
 py -m build --sdist
 py -m build --wheel
 py -m twine check dist/*
-py -m twine upload dist/*
+py -m twine upload -u {user} -p {password} dist/*
 """
-def build(autoVersion = True, baseVersion = defaultVersion):
-    """Build and upload a pypi package release"""
     installFromRequests(["setuptools", "twine", "build"], False)
     if autoVersion:
         setup = py.getLines("setup")
@@ -27,10 +26,31 @@ def build(autoVersion = True, baseVersion = defaultVersion):
     sysCommand("-m build --sdist")
     sysCommand("-m build --wheel")
     sysCommand("-m twine check dist/*")
-    sysCommand("-m twine upload dist/*")
+    try:
+        from eggconfig import pypi as info
+        user = info["user"]
+        password = info["password"]
+        sysCommand(f"-m twine upload -u {user} -p {password} dist/*")
+    except ImportError:
+        print(white + """Please create a eggconfig.py file in your current directory and write the following lines
+    
+pypi = {
+    "user" : "{your PyPI user or "__token__"}",
+    "password" : "{your PyPI password or token}"
+}
+""")
 
 def buildEggdriver(autoVersion = True, baseVersion = defaultVersion):
-    """Build and upload a eggdriver release"""
+    """Build and upload a eggdriver release to PyPI
+
+FUNCTION buildEggdriver()
+
+In Windows is equal to type in the console the following lines
+py -m build --sdist
+py -m build --wheel
+py -m twine check dist/*
+py -m twine upload -u {user} -p {password} dist/{version}dist/eggdriver-{version}.tar.gz
+"""
     installFromRequests(["setuptools", "twine", "build"], False)
     if autoVersion:
         setup = py.getLines("setup")
@@ -47,4 +67,16 @@ def buildEggdriver(autoVersion = True, baseVersion = defaultVersion):
     sysCommand("-m build --sdist")
     sysCommand("-m build --wheel")
     sysCommand("-m twine check dist/*")
-    sysCommand("-m twine upload dist/*")
+    try:
+        from eggconfig import pypi as info
+        user = info["user"]
+        password = info["password"]
+        sysCommand(f"-m twine upload -u {user} -p {password} dist/eggdriver-{v}.tar.gz")
+    except ImportError:
+        print(white + """Please create a eggconfig.py file in your current directory and write the following lines
+    
+pypi = {
+    "user" : "{your PyPI user or "__token__"}",
+    "password" : "{your PyPI password or token}"
+}
+""")

@@ -1,6 +1,29 @@
 # eggdriver
 
+                      _      _                
+                     | |    (_)               
+  \___  __ _  __ _  \__| |_ __ ___   _____ _ __ 
+ / _ \/ _\` |/ _\` |/ _` | '\__| \ \ / / _ \ '__|
+|  __/ (_| | (_| | (_| | |  | |\ V /  __/ |
+ \___|\__, |\__, |\__,_|_|  |_| \_/ \___|_|
+       __/ | __/ |
+      |___/ |___/
+
 Your proyect trusted driver.
+
+## Quick start
+
+### 1. Install eggdriver
+
+    pip install eggdriver
+
+### 2. Create the file **eggconfig.py**and wite in it the following lines:
+
+    username, password = "{your user}", "{your password}"<br><br>
+    pypi = {<br>
+        "user" : "{your PyPI user or "\__token__"}",<br>
+        "password" : "{your PyPI password or token}"<br>
+    }
 
 ## NQS inside
 
@@ -10,37 +33,10 @@ Natural Quantum Script is a special domain programming language that aims to sim
 
 Scripts written in NQS seek to visually resemble quantum circuits as much as possible. For example:
 
-q0 q1<br>
-X<br>
-H<br>
-.--- X<br>
-c1<br>
+    q0 q1<br>
+    X<br>
+    H<br>
+    .--- X<br>
+    c1<br>
 
 NQS is initially based on Qiskit, but seeks to go mainstream in the future. This is an OS project whose initial goal was to make it easier to write basic scripts in Qiskit and to bridge the gap for people who don't dare to delve into quantum computing.
-
-## News
-
-### PythonForChange Announce New SDL: Natural Quantum Script
-
-#### 06/23/2021 Santiago, Chile
-
-**Tags: [quantum-programming-language](https://github.com/topics/quantum-programming-language)**
-
-NQS (Natural Quantum Script) is a speciall domain programming language. It is focused on quantum devices scripting.
-The launching date will be announced soon.
-
-File extension: .nqa (Natural Quantum Application)
-
-### First Natural Quantum Script pre-releases
-
-#### 06/27/2021 Santiago, Chile
-
-**Tags: [quantum-programming-language](https://github.com/topics/quantum-programming-language)**
-
-More information about pre-releases [here](https://github.com/eanorambuena/NQS)
-
-### PythonForChange Announce eggdriver
-
-#### 08/06/2021 Santiago, Chile
-
-**Tags: [kit](https://github.com/topics/kit)**

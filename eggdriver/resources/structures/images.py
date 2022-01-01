@@ -1,3 +1,5 @@
+from colr import color
+
 from eggdriver.resources.structures.lists import List
 from eggdriver.resources.structures.matrices import listMatrix
 from eggdriver.resources.modules import installFromRequests
@@ -5,10 +7,13 @@ from eggdriver.resources.console import sleep
 from eggdriver.resources.constants import limit, square, whiteSquare, blackSquare
 
 class Image(listMatrix):
-    def __init__(self, listOfLists = []):
-        installFromRequests(["numpy", "tensorflow", "keras", "Pillow", "Colr"], False) # Install
+    def __init__(self, listOfLists = [], auto_install = True):
         super().__init__(listOfLists)
         self.bias = [0, 0, 0]
+        
+        if auto_install:
+            installFromRequests(["numpy", "tensorflow", "keras", "Pillow", "Colr"], False) # Install
+        
     def load(self, fileName):
         from keras.preprocessing import image # Local import
         import numpy as np # Local import
@@ -31,7 +36,6 @@ class Image(listMatrix):
     def loadFromRGB(self, vanillaMatrix):
         [self.addLast(List(vanillaList)) for vanillaList in vanillaMatrix]
     def printRGB(self):
-        from colr import color # Local import
         b = self.bias
         for vanillaList in self.matrix:
             line = limit

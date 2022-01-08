@@ -8,7 +8,7 @@ Your proyect trusted driver.
 
     pip install eggdriver
 
-### 2. Create the file **eggconfig.py** and then write in it the following lines:
+### 2. (Optional) Create the file **eggconfig.py** and then write in it the following lines:
 
     username, password = "{your user}", "{your password}"
 

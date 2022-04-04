@@ -1,9 +1,12 @@
 from eggdriver.resources.math.linear import Vector, dualExpand, vectorize
 from eggdriver.resources.math.algorithms.solver import solve
-from eggdriver.resources.structures.objects import varName
+from eggdriver.resources.structures.objects import var, varName
 
-def x(var):
-    return var
+x = var("x")
+
+from eggdriver.resources.math.linear import Vector, dualExpand, vectorize
+from eggdriver.resources.math.algorithms.solver import solve
+from eggdriver.resources.structures.objects import varName
 
 class Polynomial(Vector):
     def __init__(self, poly = [], variable = x):
@@ -42,14 +45,11 @@ class Polynomial(Vector):
         result = 0
         for i in range(0, self.size):
             f = self[i]
-            result += f * (self.variable(x) ** i)
+            result += f * (self.variable.eval(x) ** i)
         return result
     @property
     def var(self):
-        name = varName(self.variable)
-        if name != None:
-            return name
-        return "x"
+        return self.variable.var
          
     @property
     def zeros(self):
@@ -62,19 +62,19 @@ class Polynomial(Vector):
                 deg = i
         return deg
 
-def x_powered(i, variable = "x"):
+def x_powered(i, variable_str = "x"):
     if i == 0 :
         return ""
     elif i == 1:
-        return variable
-    return f"{variable}^{i}"
+        return variable_str
+    return f"{variable_str}^{i}"
 
 def plusPoly(a, b):
     if type(a) != Polynomial:
         a = Polynomial([a])
     if type(b) != Polynomial:
         b = Polynomial([b])
-    result = Polynomial()
+    result = Polynomial([], a.variable)
     if len(a) != len(b):
         dualExpand(a, b)
     if len(a) != 0 and len(a) == len(b):
@@ -83,14 +83,14 @@ def plusPoly(a, b):
     return result
 
 def scalePoly(polynomial, scalar):
-    result = Vector()
+    result = Polynomial([], polynomial.variable)
     if polynomial.size != 0:
         for i in polynomial:
             result.append(scalar * i)
     return result
 
 def times(a, b):
-    result = Polynomial()
+    result = Polynomial([], a.variable)
     if len(a) != 0:
         for i in range(0, len(a)):
             product = Polynomial()
@@ -106,5 +106,3 @@ def fromZeros(zeros = []):
     for i in zeros:
         result = Polynomial([-i, 1]).times(result)
     return result
-
-

@@ -33,3 +33,6 @@ def comment(file):
 		commentary = text[1] 
 		if commentary.split(" ")[0] == "$doc":
 			commentary = 3 * "\"" + commentary[5:] + 3 * "\""           """
+
+def itself(var):
+    return var

@@ -1,4 +1,5 @@
 # Imports
+from eggdriver.resources.utils import itself
 from eggdriver.resources.strings import normalize
 
 """
@@ -82,8 +83,9 @@ spanish_phrase.norm
 >>> El camion es mio
 """
 class var():
-    def __init__(self, var):
+    def __init__(self, var, definition_function = itself):
         self.var = var
+        self.__function__ = definition_function
     @property
     def float(self):
         return float(self.int)
@@ -108,6 +110,12 @@ class var():
     @property
     def norm(self): # Remove accents from words
         return normalize(self.str)
+    def __str__(self):
+        return varName(self)
+    def __repr__(self):
+        return f"var({str(self.var)}, {str(varName(self.__function__))})"
+    def eval(self, value):
+        return self.__function__(value)
 
 if __name__ == "__main__":
     If = "you are reading this,"

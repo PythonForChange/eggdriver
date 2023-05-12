@@ -1,8 +1,8 @@
 import pip, sys, subprocess
 import importlib.util
+from tqdm import tqdm
 from eggdriver.resources.constants import white
 from eggdriver.resources.extensions import withoutFormat
-from eggdriver.resources.console import ProgressBar
 
 def fail():
     print(white + "Install failed")
@@ -35,16 +35,14 @@ def installFromRequests(requestOrPackages = "requests", fromRequests = True):
     """Install PyPI packages from a requests file or a list"""
     if fromRequests:
         requestOrPackages = withoutFormat.getLines(requestOrPackages)
-    bar = ProgressBar()
     l = len(requestOrPackages)
     c = 0
-    for package in requestOrPackages:
+    for package in tqdm(requestOrPackages, desc="Installing", ncols=100, unit="package"):
         if '\n' in package:
             package = package.rstrip('\n')
         if isntInstalled(package):
             install_option_1(package)
         c += 1
-        bar.display(int(c / l * 100), 32, 24, True)
 
 def installFromGithub(userOrOrganization: str, packages: list):
     """Install a package from github.com"""
